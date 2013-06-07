@@ -2,6 +2,7 @@
 
 	var config = {
 		packages: [
+			{ name: 'app', location: 'app', config: { moduleLoader: 'curl/loader/cjsm11' } },
 			{ name: 'curl', location: 'lib/curl/src/curl' },
 			{ name: 'wire', location: 'lib/wire', main: 'wire' },
 			{ name: 'cola', location: 'lib/cola', main: 'cola' },

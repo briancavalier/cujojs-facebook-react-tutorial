@@ -1,4 +1,4 @@
-define({
+module.exports = {
 
 	theme: { module: 'css!theme/basic.css' },
 
@@ -51,4 +51,4 @@ define({
 		{ module: 'wire/on' },
 		{ module: 'cola' }
 	]
-});
+};
