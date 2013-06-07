@@ -34,16 +34,13 @@ define({
 			{ id: 1, author: '@briancavalier (Brian Cavalier)', text: 'This is one comment' },
 			{ id: 2, author: 'cujoJS', text: 'This is *another* comment' }
 		],
-		bind: {
-			to: { $ref: 'comments' }
-		}
+		bind: { to: { $ref: 'comments' } }
 	},
 
 	form: { module: 'cola/dom/form' },
 
 	// Wire.js plugins
 	plugins: [
-		{ module: 'wire/debug' },
 		{ module: 'wire/dom', classes: { init: 'loading' } },
 		{ module: 'wire/dom/render' },
 		{ module: 'wire/on' },
