@@ -6,7 +6,10 @@ define({
 		element: { $ref: 'dom.first!.commentList' },
 		bind: {
 			to: { $ref: 'comments' },
-			bindings: { author: '.commentAuthor', text: '.commentText' }
+			bindings: {
+				author: '.commentAuthor',
+				text: { selector: '.commentText', handler: { module: 'app/markdown' } }
+			}
 		}
 	},
 

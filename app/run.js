@@ -7,7 +7,8 @@
 			{ name: 'cola', location: 'lib/cola', main: 'cola' },
 			{ name: 'when', location: 'lib/when', main: 'when' },
 			{ name: 'meld', location: 'lib/meld', main: 'meld' },
-			{ name: 'poly', location: 'lib/poly' }
+			{ name: 'poly', location: 'lib/poly' },
+			{ name: 'marked', location: 'lib/marked/lib', main: 'marked' }
 		],
 		locale: false,
 		preloads: ['poly/all']
