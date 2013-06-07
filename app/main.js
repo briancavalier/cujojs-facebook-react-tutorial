@@ -2,17 +2,8 @@ define({
 
 	theme: { module: 'css!theme/basic.css' },
 
-	commentBox: {
-		render: {
-			template: { module: 'text!app/box/template.html' },
-			replace: { module: 'i18n!app/box/strings' }
-		},
-		insert: { first: 'dom.first!body' }
-	},
-
 	commentList: {
-		render: { module: 'text!app/list/template.html' },
-		insert: { last: 'commentBox' },
+		element: { $ref: 'dom.first!.commentList' },
 		bind: {
 			to: { $ref: 'comments' },
 			bindings: { author: '.commentAuthor', text: '.commentText' }
@@ -20,11 +11,7 @@ define({
 	},
 
 	commentForm: {
-		render: {
-			template: { module: 'text!app/form/template.html' },
-			replace: { module: 'i18n!app/form/strings' }
-		},
-		insert: { after: 'commentList' },
+		element: { $ref: 'dom.first!.commentForm' },
 		on: {
 			'submit': 'form.getValues | comments.add | commentForm.reset'
 		}
@@ -45,9 +32,7 @@ define({
 
 	// Wire.js plugins
 	plugins: [
-		{ module: 'wire/debug' },
 		{ module: 'wire/dom', classes: { init: 'loading' } },
-		{ module: 'wire/dom/render' },
 		{ module: 'wire/on' },
 		{ module: 'cola' }
 	]
