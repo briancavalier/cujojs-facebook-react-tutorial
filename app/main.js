@@ -15,7 +15,10 @@ define({
 		insert: { last: 'commentBox' },
 		bind: {
 			to: { $ref: 'comments' },
-			bindings: { author: '.commentAuthor', text: '.commentText' }
+			bindings: {
+				author: '.commentAuthor',
+				text: { selector: '.commentText', handler: { module: 'app/markdown' } }
+			}
 		}
 	},
 
