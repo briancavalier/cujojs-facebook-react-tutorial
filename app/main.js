@@ -4,15 +4,14 @@ define({
 
 	commentBox: {
 		render: {
-			template: { module: 'text!app/box/template.html' },
-			replace: { module: 'i18n!app/box/strings' }
+			template: { module: 'text!app/template.html' },
+			replace: { module: 'i18n!app/strings' }
 		},
 		insert: { first: 'dom.first!body' }
 	},
 
 	commentList: {
-		render: { module: 'text!app/list/template.html' },
-		insert: { last: 'commentBox' },
+		element: { $ref: 'dom.first!.commentList', at: 'commentBox' },
 		bind: {
 			to: { $ref: 'comments' },
 			bindings: { author: '.commentAuthor', text: '.commentText' }
@@ -20,13 +19,9 @@ define({
 	},
 
 	commentForm: {
-		render: {
-			template: { module: 'text!app/form/template.html' },
-			replace: { module: 'i18n!app/form/strings' }
-		},
-		insert: { after: 'commentList' },
+		element: { $ref: 'dom.first!.commentForm', at: 'commentBox' },
 		on: {
-			'submit': 'form.getValues | comments.add | commentForm.reset'
+			'submit': 'form.getValues | comments.add | reset'
 		}
 	},
 
